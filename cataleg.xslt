@@ -8,7 +8,7 @@
     <tr bgcolor="#ff0000">
       <th style="text-align:left">Title</th>
       <th style="text-align:left">Country</th>
-      <th style="text-align:left">Artist</th>
+      <!--<th style="text-align:left">Artist</th>-->
       <th style="text-align:left">Price</th>
   
     </tr>
@@ -20,17 +20,27 @@
     <tr>
       <td><xsl:value-of select="title"/></td>
       <td><xsl:value-of select="country"/></td>
-      <td><xsl:value-of select="artist"/></td>
+       <!-- <td><xsl:value-of select="artist"/></td>-->
       <td><xsl:value-of select="price"/></td>
         <td>
-        
+       <!--  
       <xsl:if test="price &gt; 10">
           <xsl:text>&#128308;</xsl:text> 
       </xsl:if>
       <xsl:if test="price &lt;= 10">
           <xsl:text>&#128994;</xsl:text> 
       </xsl:if>
+-->
     </td>  
+          <xsl:choose>
+        <xsl:when test="price &gt; 10">
+          <td bgcolor="#ff00ff">
+          <xsl:value-of select="artist"/></td>
+        </xsl:when>
+        <xsl:otherwise>
+          <td><xsl:value-of select="artist"/></td>
+        </xsl:otherwise>
+      </xsl:choose>
     </tr>
     </xsl:for-each>
   </table>
