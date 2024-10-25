@@ -15,7 +15,7 @@
     <!--<xsl:for-each select="catalog/cd[country='USA']">-->
    
     <xsl:for-each select="catalog/cd[price &lt; 10]">
-    <xsl:sort select="artist"/>
+    <xsl:sort select="price"/>
 
     <tr>
       <td><xsl:value-of select="title"/></td>
